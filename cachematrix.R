@@ -14,9 +14,8 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set=set, get=get,                     ##The four "internal functions" are stored in a list so that when 
        setmatrix=setmatrix,                  ## "makeCacheMatrix" is assigned to an object, the object iterates all four functions.
        getmatrix=getmatrix)
-
 }
-
+}
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix. 
 ## If the inverse has already been calculated (and the matrix is not changed), then cachesolve 
@@ -32,4 +31,5 @@ cacheSolve <- function(x, ...) {
   m<-solve(matrix, ...)   ## the solve function calculates the inverse of the matrix
   x$setmatrix(m)          ## setmatrix sets the values of the inverse matrix and then 
   m                       ## m concludes the function by returning the values of the inverse matrix.
+}
 }
